@@ -8,7 +8,7 @@
 
 Chester is a robot that allows for a pilot to connect to it as an access point, the controls are hosted as an http server in the robot.
 
-  - Chester composes of a tessel 2 platform running on the Johnny-Five api
+  - Chester composes of a tessel 2 platform running on the Johnny-Five, which is an IOT api
   - Johnny-Five allows you to interpret data to the mechanical components of chester through the controller chip and js logic
   - Chesters controls are hosted in a http server that runs on the tessel 2 board
 
@@ -129,19 +129,36 @@ The webservers UI is not anything pretty since the goal was to have the least co
 
 ### Troubleshoot
 
-during the development many issues were encountered throught the  process of making the tessel 2 to function. One issues was that the board was bricked do to a coruption of th flash during an update. This was probably the biggest roadblock since most forums trying top deal whith this issue would either not work or were not compatible with the hardware used to configure the tessel or would simply end in no solution possible. 
+during the development many issues were encountered throught the  process of making the tessel 2 to function. One issues was that the board was bricked do to a coruption of the flash during an update. This was probably the biggest roadblock since most forums trying top deal whith this issue would either not work or were not compatible with the hardware used to configure the tessel or would simply end in no solution possible. 
 
-fortunately after much research and mentor assistance (if you know you know 👉) two methods were found to allow users to flash the tessel and continue on with their production:
+fortunately after much research and mentor assistance (if you know you know 👉) two methods were found to allow users to flash the tessel and continue on with their production(both were tested and utilised... multiple times🤕):
 
-MACos and Linux:
+###MACos and Linux:
 for the mac we managed to flash the tessel running a flash.py script that would find the device, wipe the flash memory and then run the operating system back on. you can find the scrips here :
 <a href='https://github.com/tessel/t2-firmware.git'>t2-firmware</a>
 the os will be in the file called t2FlashOS
 
-Windows: 
+###Windows: 
 Windows was more dificult since most of the solutions required a lot more accessabilty and harware knowledge that was just to dificult for most users at my level of programing and harware at the moment of writing this(I know thers some super genius out there probaly reading this saying "bro I learned how to do that in my freshman year of college", well we all aren't that lucky  eh?). Point aside, here is the solution to all your nightmares my beloved normal earthlings:
 
 <a href="https://github.com/tessel/t2-cli/issues/742">Baby jesus descends for my boys</a>
+
+###Conclusion
+this project definetly has a lot of room to grow in a multitude of different paths, but there is definetly a couple recommendations:
+- the motors are pretty weak so its recommended investing in something with more power to carry the weight of the whole bot
+- the more juice the more the bot can work, get a better battery
+- try other platforms, maybe they will be easier to set up and expand on
+
+###and now here is a video of chester dancing to Dead or Alive - You Spin Me Round
+
+<a href='https://youtu.be/V_1uk4WQxek'>Do a little dance</a>
+
+<canvas class="LseTRCTVuhsl6arwQUvpF" height="853" width="480" style="background-color: rgba(1, 1, 1, 0);"></canvas>
+
+thank you to our team for all the work put in to this project and our mentors for putting up with our crazy two week plan and powering through with us, if we can pull this of with no background in IOT or hardware than anyone can.
+
+
+Published by: Adriel Alvarez
 
 [//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
