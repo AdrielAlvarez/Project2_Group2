@@ -35,7 +35,7 @@ You can find the guide used to make this robot down bellow:
 
 ### Code
 
-The code had to be modified to fit some of the criterias needed. To start the motor.js file used to be a test code for the robots motors, it was changed so that the motorRun function could recieve logical output from the server.js file and translate it in to a direction and boolean for if to power on or not. 
+The code had to be modified to fit some of the criterias needed. To start the motor.js file used to be a test code for the robots motors, it was changed so that the motorRun function could recieve logical output from the webserver.js file and translate it in to a direction and boolean for if to power on or not. 
 ```
 //Original:
 board.on("ready", () => {
@@ -107,26 +107,25 @@ $ npm install
 
 ```
 $ npm install -g t2-cli
+```
 
 
+### How to run
 
-### Plugins
+in that same directory run this command (note. you need the tessel for this to work)
 
-Dillinger is currently extended with the following plugins. Instructions on how to use them in your own application are linked below.
+```
+t2 run webserver.js
+```
+the output should look something like this:
+```
 
-| Plugin | README |
-| ------ | ------ |
-| Dropbox | [plugins/dropbox/README.md][PlDb] |
-| Github | [plugins/github/README.md][PlGh] |
-| Google Drive | [plugins/googledrive/README.md][PlGd] |
-| OneDrive | [plugins/onedrive/README.md][PlOd] |
-| Medium | [plugins/medium/README.md][PlMe] |
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] |
+```
 
+### Webserver
 
-### Development
-
-Want to contribute? Great!
+The webservers UI is not anything pretty since the goal was to have the least confusing and resource demandent interface
+<img src = "https://tessel.github.io/t2-start/images/ap-web-app-preview.png">
 
 Dillinger uses Gulp + Webpack for fast developing.
 Make a change in your file and instantanously see your updates!
