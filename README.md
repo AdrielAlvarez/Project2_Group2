@@ -1,6 +1,6 @@
 # Chesters Adventure
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
+[![Node.js](https://upload.wikimedia.org/wikipedia/commons/7/7e/Node.js_logo_2015.svg)](https://nodejs.org/en/)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -33,39 +33,80 @@ You can find the guide used to make this robot down bellow:
 
 ### Code
 
-The code had to be modified to fit some of the criterias needed. To start the motor.js file used to be a test code for the robots motors, it was changed so that the motorRun function could recieve logical output from the server.js file and translate it in to a direction and a speed. 
+The code had to be modified to fit some of the criterias needed. To start the motor.js file used to be a test code for the robots motors, it was changed so that the motorRun function could recieve logical output from the server.js file and translate it in to a direction and boolean for if to power on or not. 
+```
+//Original:
+board.on("ready", () => {
+  // Johnny-Five's `Motors` collection class allows
+  // us to control multiple motors at once.
+  const motors = new five.Motors([
+    // Left Motor
+    { pins: { pwm: "a5", dir: "a4", cdir: "a3" } },
+    // Right Motor
+    { pins: { pwm: "b5", dir: "b4", cdir: "b3" } },
+  ]);
+  let direction = "forward"
+  let speed = 0;
 
-* [AngularJS] - HTML enhanced for web apps!
-* [Ace Editor] - awesome web-based text editor
-* [markdown-it] - Markdown parser done right. Fast and easy to extend.
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [node.js] - evented I/O for the backend
-* [Express] - fast node.js network app framework [@tjholowaychuk]
-* [Gulp] - the streaming build system
-* [Breakdance](http://breakdance.io) - HTML to Markdown converter
-* [jQuery] - duh
+  function accelerate() {
+    if (speed <= 255) {
+      speed += 5;
+      motors[direction](speed);
+      board.wait(200, accelerate);
+    } else {
+      flipMotorDirection();
+    }
+  }
 
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
+  function flipMotorDirection() {
+    motors.stop();
+    board.wait(1000, () => {
+      speed = 0;
+      direction = direction === "reverse" ? "forward" : "reverse";
+      console.log(`Running motors in ${direction} direction`);
+      accelerate();
+    });
+  }
+  flipMotorDirection();
+});
+
+//New:
+var motorRun = function(motion, power){
+    // Johnny-Five's `Motors` collection class allows
+  // us to control multiple motors at once.
+  var isOn = power
+  let direction = motion
+  let speed = 1;
+
+  function accelerate() {
+      speed = 50;
+      motors[direction](speed);
+  }
+  if(isOn){
+accelerate()
+  }else{
+    motors.stop()
+  }
+};
+```
+
 
 ### Installation
 
-Dillinger requires [Node.js](https://nodejs.org/) v4+ to run.
+go down to this sub directory path Project2_Grouop2/Project2_Grouop2/chester_bot
 
 Install the dependencies and devDependencies and start the server.
 
-```sh
-$ cd dillinger
-$ npm install -d
-$ node app
 ```
+$ npm install
 
-For production environments...
-
-```sh
-$ npm install --production
-$ NODE_ENV=production node app
 ```
+- Install t2-cli as a global dependency
+
+```
+$ npm install -g t2-cli
+
+
 
 ### Plugins
 
