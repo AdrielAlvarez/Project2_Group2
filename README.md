@@ -134,7 +134,9 @@ during the development many issues were encountered throught the  process of mak
 fortunately after much research and mentor assistance (if you know you know 👉) two methods were found to allow users to flash the tessel and continue on with their production:
 
 MACos and Linux:
-for the mac we managed to flash the tessel running a flash.py script that would find the device, wipe the flash memory and then run the operating system back on. you can find the scripts and the os in reflash/unixSystems
+for the mac we managed to flash the tessel running a flash.py script that would find the device, wipe the flash memory and then run the operating system back on. you can find the scrips here :
+<a href='https://github.com/tessel/t2-firmware.git'>t2-firmware</a>
+the os will be in the file called t2FlashOS
 
 Windows: 
 Windows was more dificult since most of the solutions required a lot more accessabilty and harware knowledge that was just to dificult for most users at my level of programing and harware at the moment of writing this(I know thers some super genius out there probaly reading this saying "bro I learned how to do that in my freshman year of college", well we all aren't that lucky  eh?). Point aside, here is the solution to all your nightmares my beloved normal earthlings:
