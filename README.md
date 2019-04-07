@@ -1,6 +1,8 @@
 # Chesters Adventure
 
 [![Node.js](https://upload.wikimedia.org/wikipedia/commons/7/7e/Node.js_logo_2015.svg)](https://nodejs.org/en/)
+[![johnny-five](https://hackster.imgix.net/uploads/avatar/file/161182/Screen_Shot_2016-06-16_at_11.43.43_AM.png?auto=compress%2Cformat)](http://johnny-five.io/)
+[![johnny-five](https://blog.maartenballiauw.be/images/image_330.png)](https://tessel.io/)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
